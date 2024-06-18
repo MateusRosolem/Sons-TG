@@ -16,52 +16,47 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-var audio = document.getElementById('Atencao');
-var progress = document.getElementById('progressAtencao');
-audio.ontimeupdate = function () {
-    var percentage = (audio.currentTime / audio.duration) * 100;
-    progress.value = percentage;
-};
 
 function adicionarComentario() {
-    var comentario = document.getElementById('comentarioInput').value.trim();
-    if (comentario !== '') {
-        $.ajax({
-            type: 'POST',
-            url: '/comentario',
-            contentType: 'application/json',
-            data: JSON.stringify({ comentario: comentario }),
-            success: function (response) {
-                var novoComentario = response.comentario;
-                var listaComentarios = document.getElementById('listaComentarios');
-                var novoItem = document.createElement('li');
-                novoItem.innerHTML = `${novoComentario} <button class="commentButton" onclick="removerComentario(event)">Remover</button>`;
-                listaComentarios.appendChild(novoItem);
-                document.getElementById('comentarioInput').value = '';
-            },
-            error: function (error) {
-                console.error('Erro ao adicionar comentário:', error);
-            }
-        });
+    const comentarioInput = document.getElementById('comentarioInput');
+    const comentario = comentarioInput.value.trim();
+
+    if (comentario) {
+        // Adiciona o comentário à lista
+        adicionarComentarioNaLista(comentario);
+
+        // Salva o comentário no localStorage
+        salvarComentarioNoLocalStorage(comentario);
+
+        // Limpa o campo de entrada
+        comentarioInput.value = '';
     }
 }
 
-// Função para remover comentário via AJAX
-function removerComentario(event) {
-    var listItem = event.target.parentNode;
-    var index = Array.prototype.indexOf.call(listItem.parentNode.children, listItem);
+function adicionarComentarioNaLista(comentario) {
+    const listaComentarios = document.getElementById('listaComentarios');
+    const novoComentarioLi = document.createElement('li');
+    novoComentarioLi.className = 'commentLi';
+    novoComentarioLi.textContent = comentario;
+    listaComentarios.appendChild(novoComentarioLi);
+}
 
-    $.ajax({
-        type: 'DELETE',
-        url: `/comentario/${index}`,
-        success: function (response) {
-            listItem.remove();
-        },
-        error: function (error) {
-            console.error('Erro ao remover comentário:', error);
-        }
+function salvarComentarioNoLocalStorage(comentario) {
+    let comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+    comentarios.push(comentario);
+    localStorage.setItem('comentarios', JSON.stringify(comentarios));
+}
+
+function carregarComentariosDoLocalStorage() {
+    const comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+    comentarios.forEach(comentario => {
+        adicionarComentarioNaLista(comentario);
     });
 }
+
+// Carrega os comentários quando a página for carregada
+document.addEventListener('DOMContentLoaded', carregarComentariosDoLocalStorage);
+
 
 function filterAudios() {
     var input = document.getElementById('searchBar').value.toUpperCase();
@@ -78,16 +73,16 @@ function filterAudios() {
 
 
 
-function downloadAudio() {
-    const url = document.getElementById('youtubeUrl').value;
-    axios.post('/download', { url: url })
-        .then(response => {
-            const audioContainer = document.getElementById('audioContainer');
-            audioContainer.innerHTML = response.data.html_button;
-        })
-        .catch(error => {
-            console.error('There was an error downloading the audio!', error);
-        });
-}
+// function downloadAudio() {
+//     const url = document.getElementById('youtubeUrl').value;
+//     axios.post('/download', { url: url })
+//         .then(response => {
+//             const audioContainer = document.getElementById('audioContainer');
+//             audioContainer.innerHTML = response.data.html_button;
+//         })
+//         .catch(error => {
+//             console.error('There was an error downloading the audio!', error);
+//         });
+// }
 
 

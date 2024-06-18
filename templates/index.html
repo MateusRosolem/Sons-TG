@@ -537,30 +537,27 @@
   </div>
 
 
-  <div class="commentsDiv" id="commentsDiv">
+<div class="commentsDiv" id="commentsDiv">
         <h2 class="commentsH2">Comentários/Sugestões</h2>
         <h3 class="musicSuggestions">(Coloque aqui as músicas que você gostaria de adicionar:)</h3>
         <textarea class="commentText" id="comentarioInput" placeholder="Digite seu comentário aqui..."></textarea>
         <button class="commentAddButton" onclick="adicionarComentario()">Adicionar comentário</button>
         <!-- Contêiner para a lista de comentários -->
-  </div>
-
-  <div class="commentsListDiv">
-    <h3 class="commentsListH3">Comentários</h3>
-    <div id="commentsList">
-      <ul class="comment" id="listaComentarios">
-        {% for comentario in comentarios %}
-            <li class="commentLi">{{ comentario }} 
-              <button onclick="removerComentario(event)">Remover</button>
-            </li>
-        {% endfor %}
-      </ul>
     </div>
-  </div>
+
+    <div class="commentsListDiv">
+        <h3 class="commentsListH3">Comentários</h3>
+        <div id="commentsList">
+            <ul class="comment" id="listaComentarios">
+                <!-- Comentários serão adicionados aqui -->
+            </ul>
+        </div>
+    </div>
 
 
 <hl></hl>
 
+<!--
 <div class="youtubeDownload">
   <h1 >Download YouTube Audio</h1>
   <h3>Clicar uma vez e esperar 10segundos!!</h3>
@@ -571,7 +568,7 @@
 <div class="audioContainer "id="audioContainer">
   {{ audio_html|safe }}
 </div>  
-
+-->
 
 
 <footer class="rodape">
