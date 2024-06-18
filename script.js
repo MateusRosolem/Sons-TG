@@ -38,6 +38,14 @@ function adicionarComentarioNaLista(comentario) {
     const novoComentarioLi = document.createElement('li');
     novoComentarioLi.className = 'commentLi';
     novoComentarioLi.textContent = comentario;
+
+    // Adicionar botão de remoção
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remover';
+    removeButton.className = 'commentButton';
+    removeButton.onclick = () => removerComentario(comentario, novoComentarioLi);
+
+    novoComentarioLi.appendChild(removeButton);
     listaComentarios.appendChild(novoComentarioLi);
 }
 
@@ -52,6 +60,16 @@ function carregarComentariosDoLocalStorage() {
     comentarios.forEach(comentario => {
         adicionarComentarioNaLista(comentario);
     });
+}
+
+function removerComentario(comentario, comentarioElement) {
+    // Remove o comentário do localStorage
+    let comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+    comentarios = comentarios.filter(c => c !== comentario);
+    localStorage.setItem('comentarios', JSON.stringify(comentarios));
+
+    // Remove o elemento do DOM
+    comentarioElement.remove();
 }
 
 // Carrega os comentários quando a página for carregada
