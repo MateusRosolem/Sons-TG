@@ -6,6 +6,12 @@ body {
     font-family: 'Poppins', sans-serif;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     margin: 0;
+    color: white;
+    transition: color 0.3s ease,
+}
+
+.dark-mode {
+    color: black;
 }
 
 button {
@@ -167,6 +173,24 @@ h1,.center {
     text-align: center;
 }
 
+
+.toggle-button {
+    position: flex;
+    padding: 10px 20px;
+    width: 100px;
+    height: 45px;
+    background-color: black;
+    border: 2px solid gray;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    border: solid;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 42em;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
 
 
 .nav-button {
@@ -642,6 +666,7 @@ align-items: center;
     color: white;
     font-size: 17px;
     height: 80px;
+    resize: none;
 }
 
 textarea::placeholder {

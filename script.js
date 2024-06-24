@@ -264,6 +264,20 @@ var disqus_config = function () {
     })();
 
 
+
+function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+
+
+
+
+
+
+
+
+
 /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
