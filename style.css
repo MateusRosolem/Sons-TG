@@ -10,7 +10,7 @@ body {
 
 button {
     width: 40%;
-    height: 40px;
+    height: 50px;
     display: inline-block;
     justify-content: flex-end;
     border: solid;
@@ -36,13 +36,238 @@ hr{
     margin: 20px auto;
 }
 
+input {
+    width: 100%;
+    border: 2px;
+    outline: none;
+    background: none;
+    /* Remove o fundo do input */
+    color: white;
+    /* Define a cor do texto digitado como branco */
+    font-size: 13px;
+}
+
+input::placeholder {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+
+input[type="text"] {
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+iframe {
+    margin-top: 20px;
+    width: 560px;
+    height: 315px;
+}
+
+
+
+/* Estilos básicos de reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    color: white;
+    /* position: fixed; */
+    width: 100%;
+    height: 80px;
+}
+
+header .logo img {
+    height: 50px;
+    /* Ajuste conforme necessário */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    /* Transição suave para a cor */
+}
+
+nav ul li a:hover {
+    color: #ddd;
+    /* Cor ao passar o mouse */
+}
+
+/* Estilos das seções */
+section {
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    /* Animação de entrada */
+}
+
+section.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.fade-in{
+    margin-bottom: 100px;
+}
+
+section h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilos do rodapé */
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: black;
+    width: 100%;
+    bottom: 0;
+}
+
+h1,.center {
+    text-align: center;
+}
+
+
+
+.nav-button {
+    position: fixed;
+    right: 10px;
+    padding: 10px;
+    background-color: #51ac78;
+    color: black;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    text-align: left;
+    font-size: 10px;
+    text-shadow: #000000 0.1px 0.1px ;
+}
+
+
+.nav-button:hover {
+    background-color: #1E5B37;
+}
+
+.nav-buttons-container {
+    position: fixed;
+    top: 25%;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 200px;
+    height: 200px;
+    z-index: 9999;
+}
+
+
+
+.term {
+    margin-bottom: 20px;
+}
+
+.term h2 {
+    color: #60e79b;
+}
+
+.definition {
+    margin-left: 20px;
+}
+
+.example {
+    margin-left: 40px;
+    font-style: italic;
+}
+
+.faq-section {
+    margin-bottom: 20px;
+}
+
+.faq-section h2 {
+    color: #2E8B57;
+}
+
+.question {
+    font-weight: bold;
+}
+
+.answer {
+    margin-left: 20px;
+}
+
+
+
+
+.icon{
+    font-size: 24px;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.recursosEducativos{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+
+
 .searchBarDiv {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.searchBar{
+.searchBar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,24 +277,10 @@ hr{
     background-color: black;
 }
 
-input {
-    width: 100%;
-    border: 2px;
-    outline: none;
-    background: none;
-    /* Remove o fundo do input */
-    color: white;
-    /* Define a cor do texto digitado como branco */
-    font-size: 15px;
-}
 
-input::placeholder {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-}
 
 .sonsTG{
+    padding-top: 50px;
     font-size: 50px;
     text-align: center;
 }
@@ -156,9 +367,12 @@ input::placeholder {
 
 .commentAddButton {
     width: 400px;
-    height: 50px;
+    height: 70px;
     font-size: 25px;
     margin-bottom: 50px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 
@@ -175,6 +389,13 @@ input::placeholder {
     align-items: center;
 }
 
+.commentsList{
+    width: 50%;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
 .commentsListH3{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
@@ -182,6 +403,10 @@ input::placeholder {
 
 
 .comment{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
     padding: 2px;
@@ -189,7 +414,9 @@ input::placeholder {
 
 .commentLi{
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .commentButton{
@@ -204,6 +431,10 @@ input::placeholder {
     justify-content: center;
     width: 80%;
     margin: 100px auto;
+}
+
+.youtube-title{
+    font-size: 35px;
 }
 
 
@@ -230,6 +461,208 @@ input::placeholder {
 }
 
 
+.audio-section {
+    margin-bottom: 20px;
+}
+
+.audio-section h2 {
+    color: #2E8B57;
+}
+
+
+.youtube-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+.youtube-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.youtube-input {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+
+.youtube-button {
+    padding: 10px 20px;
+    height: 50px;
+    background-color: #ff0000;
+    color: #fff;
+    border: 2px solid black;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+}
+
+.video-container {
+    width: 100%;
+    margin-top: 80px;
+    padding-bottom: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container iframe {
+    width: 512px;
+    height: 290px;
+}
+
+.lyrics-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 2px solid #2E8B57;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.close-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background: #2E8B57;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 80%;
+}
+
+
+.gallery{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 300px;
+}
+
+.gallery img {
+    margin: 25px;
+    width: auto;
+    height: 300px;
+}
+
+.gallery video{
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    max-width: 100%;
+            width: auto;
+            height: 300px;
+}
+
+
+.destaquesGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.destaquesGallery figure {
+    margin: 0;
+    text-align: center;
+    flex: 1 1 calc(100% / 11 - 10px);
+}
+
+.destaquesGallery img {
+    width: 100%;
+    height: auto;
+}
+
+.destaquesGallery figcaption {
+    margin-top: 5px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.forum{
+    margin-bottom: 500px;
+    overflow: hidden
+}
+
+
+
+
+
+
+
+
+
+
+.contato {
+    margin-bottom: 300px;
+}
+
+.contato-form {
+  width: 100%;
+}
+
+.contato-form input {
+    width: 60%;
+    height: 50px;
+    padding: 10px 0 10px 0;
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+.contato-form label{
+    text-align: left;
+    align-items: left;
+}
+
+
+.contato-form textarea{
+    width: 60%;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    background-color: transparent;
+    color: white;
+    font-size: 17px;
+    height: 80px;
+}
+
+textarea::placeholder {
+    color: white;
+}
+
+.contato-form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contato-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
 
 .rodape{
     margin-top: 200px;
@@ -237,8 +670,10 @@ input::placeholder {
     width: 100%;
     height: 150px;
     display: flex;
-    justify-content: center;
-    align-items: end;
+    justify-content: end;
 }
 
+.rodape-text{
+    color: white;
+}
 
