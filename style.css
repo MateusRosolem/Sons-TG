@@ -1,82 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-
-body {
-    background: rgba(3, 114, 58, 0.972);
-    font-family: 'Poppins', sans-serif;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-    margin: 0;
-    color: white;
-    transition: color 0.3s ease,
-}
-
-.dark-mode {
-    color: black;
-}
-
-button {
-    width: 40%;
-    height: 50px;
-    display: inline-block;
-    justify-content: flex-end;
-    border: solid;
-    text-align: center;
-    background-color: black;
-    color: white;
-    margin-top: 10px;
-    font-family: 'Poppins',sans-serif;
-}
-
-audio {
-    margin-top: 10px;
-    opacity: 0.7;
-    align-items: end;
-}
-
-hr{
-    color: black;
-    width: 80%;
-    border: none;
-    height: 2px;
-    background-color: black;
-    margin: 20px auto;
-}
-
-input {
-    width: 100%;
-    border: 2px;
-    outline: none;
-    background: none;
-    /* Remove o fundo do input */
-    color: white;
-    /* Define a cor do texto digitado como branco */
-    font-size: 13px;
-}
-
-input::placeholder {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-}
-
-
-input[type="text"] {
-    padding: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-iframe {
-    margin-top: 20px;
-    width: 560px;
-    height: 315px;
-}
-
-
-
 /* Estilos básicos de reset */
 * {
     margin: 0;
@@ -84,53 +7,88 @@ iframe {
     box-sizing: border-box;
 }
 
+body {
+    background: rgba(3, 114, 58, 0.972);
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.dark-mode {
+    color: black;
+}
+
 /* Estilos do cabeçalho */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: #000000;
     color: white;
-    /* position: fixed; */
     width: 100%;
-    height: 80px;
+    height: auto;
+    /* Altura ajustável */
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }
 
 header .logo img {
-    height: 50px;
+    height: 40px;
     /* Ajuste conforme necessário */
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin: 0 10px;
+    /* Espaçamento reduzido */
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     transition: color 0.3s ease-in-out;
-    /* Transição suave para a cor */
 }
 
 nav ul li a:hover {
     color: #ddd;
-    /* Cor ao passar o mouse */
+}
+
+/* Ícone de menu para telas menores */
+.nav-button {
+    display: none;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
 }
 
 /* Estilos das seções */
 section {
-    padding: 20px;
+    padding: 80px 20px 20px;
+    /* Adicionado espaçamento superior para evitar sobreposição com o cabeçalho fixo */
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    /* Animação de entrada */
 }
 
 section.fade-in.visible {
@@ -138,14 +96,13 @@ section.fade-in.visible {
     transform: translateY(0);
 }
 
-
-.fade-in{
+.fade-in {
     margin-bottom: 100px;
 }
 
 section h2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
+    text-align: center;
 }
 
 section ul {
@@ -169,13 +126,13 @@ footer {
     bottom: 0;
 }
 
-h1,.center {
+h1,
+.center {
     text-align: center;
 }
 
-
 .toggle-button {
-    position: flex;
+    position: relative;
     padding: 10px 20px;
     width: 100px;
     height: 45px;
@@ -187,46 +144,80 @@ h1,.center {
     border: solid;
     text-align: center;
     margin-top: 10px;
-    margin-right: 42em;
+    margin-right: 10px;
+    /* Espaçamento à direita ajustado */
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
 }
 
-
-.nav-button {
-    position: fixed;
-    right: 10px;
-    padding: 10px;
-    background-color: #51ac78;
-    color: black;
-    border: none;
-    cursor: pointer;
-    width: 40px;
+/* Estilos para botões */
+button {
+    width: auto;
+    /* Largura ajustável */
     height: 40px;
-    text-align: left;
-    font-size: 10px;
-    text-shadow: #000000 0.1px 0.1px ;
+    display: inline-block;
+    justify-content: center;
+    border: solid;
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 16px;
+    /* Padding ajustado */
+    border-radius: 4px;
+    /* Cantos arredondados */
+    cursor: pointer;
 }
 
-
-.nav-button:hover {
-    background-color: #1E5B37;
+/* Estilos para elementos de áudio */
+audio {
+    margin-top: 10px;
+    opacity: 0.7;
+    width: 100%;
+    /* Largura máxima */
 }
 
-.nav-buttons-container {
-    position: fixed;
-    top: 25%;
-    right: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    width: 200px;
-    height: 200px;
-    z-index: 9999;
+/* Estilos para elementos de input */
+input {
+    width: 100%;
+    border: 2px solid white;
+    /* Cor da borda definida como branca */
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 13px;
+    padding: 8px;
+    /* Padding ajustado */
 }
 
+input::placeholder {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
 
+/* Estilos para iframes */
+iframe {
+    margin-top: 20px;
+    width: 100%;
+    /* Largura máxima */
+    height: 315px;
+    max-width: 560px;
+    /* Largura máxima definida */
+}
 
+/* Estilos para elementos de linha horizontal */
+hr {
+    color: black;
+    width: 80%;
+    border: none;
+    height: 2px;
+    background-color: black;
+    margin: 20px auto;
+}
+
+/* Estilos para termos e definições */
 .term {
     margin-bottom: 20px;
 }
@@ -244,6 +235,7 @@ h1,.center {
     font-style: italic;
 }
 
+/* Estilos para seções de FAQ */
 .faq-section {
     margin-bottom: 20px;
 }
@@ -260,14 +252,13 @@ h1,.center {
     margin-left: 20px;
 }
 
-
-
-
-.icon{
+/* Estilos para ícones */
+.icon {
     font-size: 24px;
 }
 
-.title{
+/* Estilos para títulos */
+.title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -275,16 +266,16 @@ h1,.center {
     margin-bottom: 50px;
 }
 
-.recursosEducativos{
-    font-size: 40px;
+.recursosEducativos {
+    font-size: 32px;
+    /* Tamanho de fonte ajustado */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
 }
 
-
-
+/* Estilos para a barra de pesquisa */
 .searchBarDiv {
     display: flex;
     align-items: center;
@@ -295,68 +286,99 @@ h1,.center {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 90%;
+    /* Largura ajustada */
+    max-width: 500px;
+    /* Largura máxima definida */
     height: 35px;
     border: none;
     background-color: black;
 }
 
-
-
-.sonsTG{
+/* Estilos para elementos relacionados a sons */
+.sonsTG {
     padding-top: 50px;
-    font-size: 50px;
-    text-align: center;
-}
-.tg02033 {
-    font-size: 25px;
+    font-size: 32px;
+    /* Tamanho de fonte ajustado */
     text-align: center;
 }
 
-.brasao{
+.tg02033 {
+    font-size: 20px;
+    /* Tamanho de fonte ajustado */
+    text-align: center;
+}
+
+/* Estilos para brasões */
+.brasao {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.brasaoImg{
-    width: 350px;
+.brasaoImg {
+    width: 100%;
+    /* Largura máxima */
+    max-width: 350px;
+    /* Largura máxima definida */
     height: auto;
     background-color: transparent;
 }
 
-.divRow{
+/* Estilos para linhas */
+.divRow {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    /* Quebra de linha */
 }
+
 .divRowLeft {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     align-items: left;
     padding-left: 27px;
+    flex-wrap: wrap;
+    /* Quebra de linha */
 }
 
-.audioDiv{
-    width: 30%;
+/* Estilos para elementos de áudio */
+.audioDiv {
+    width: 100%;
+    /* Largura total */
+    max-width: 300px;
+    /* Largura máxima definida */
     height: 280px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     border: solid;
     text-align: center;
-    margin: 1%;
+    margin: 10px;
+    /* Margem ajustada */
 }
 
-.tituloBasicos,.tituloArma,.tituloPremiacao,
-.tituloCancoes,.tituloMusicas, .tituloBandeira, .tituloDobrado,.tituloOutros{
+/* Estilos para títulos de seções */
+.tituloBasicos,
+.tituloArma,
+.tituloPremiacao,
+.tituloCancoes,
+.tituloMusicas,
+.tituloBandeira,
+.tituloDobrado,
+.tituloOutros {
     justify-content: center;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
+    /* Tamanho de fonte ajustado */
 }
 
-.commentsDiv{
+/* Estilos para a seção de comentários */
+.commentsDiv {
     padding-top: 60px;
     display: flex;
     flex-direction: column;
@@ -364,136 +386,176 @@ h1,.center {
     align-items: center;
 }
 
-.commentsH2{
-    font-size: 35px;
+.commentsH2 {
+    font-size: 28px;
+    /* Tamanho de fonte ajustado */
 }
-.commentText{
-    width: 700px;
+
+.commentText {
+    width: 90%;
+    /* Largura ajustada */
+    max-width: 700px;
+    /* Largura máxima definida */
     height: 80px;
     border: 2px solid black;
     border-radius: 3px;
     resize: none;
     outline: none;
     background: none;
-    font-size: 20px;
+    font-size: 16px;
+    /* Tamanho de fonte ajustado */
+    padding: 8px;
+    /* Padding ajustado */
 }
 
-
-.commentText::placeholder{
+.commentText::placeholder {
     color: white;
     border: none;
     background-color: transparent;
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
+    /* Tamanho de fonte ajustado */
 }
 
-
-
 .commentAddButton {
-    width: 400px;
-    height: 70px;
-    font-size: 25px;
+    width: auto;
+    /* Largura ajustável */
+    height: 50px;
+    font-size: 18px;
+    /* Tamanho de fonte ajustado */
     margin-bottom: 50px;
     display: flex;
     text-align: center;
     justify-content: center;
+    padding: 8px 16px;
+    /* Padding ajustado */
 }
 
-
-.musicSuggestions{
+/* Estilos para sugestões de músicas */
+.musicSuggestions {
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) ;
+    font-size: 16px;
+    /* Tamanho de fonte ajustado */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.commentsListDiv{
+/* Estilos para a lista de comentários */
+.commentsListDiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.commentsList{
-    width: 50%;
+.commentsList {
+    width: 90%;
+    /* Largura ajustada */
+    max-width: 500px;
+    /* Largura máxima definida */
     display: flex;
-        justify-content: center;
-        align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
-.commentsListH3{
+.commentsListH3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 30px;
+    font-size: 24px;
+    /* Tamanho de fonte ajustado */
 }
 
-
-.comment{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+.comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 17px;
-    padding: 2px;
+    font-size: 14px;
+    /* Tamanho de fonte ajustado */
+    padding: 10px;
+    /* Padding ajustado */
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 4px;
 }
 
-.commentLi{
+.commentLi {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-.commentButton{
-    margin-left: 80px;
-    width:100px;
+.commentButton {
+    margin-left: 20px;
+    /* Margem à esquerda ajustada */
+    width: 80px;
+    /* Largura ajustada */
 }
 
+/* Estilos para o download do YouTube */
 .youtubeDownload {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 90%;
+    /* Largura ajustada */
+    max-width: 500px;
+    /* Largura máxima definida */
     margin: 100px auto;
 }
 
-.youtube-title{
-    font-size: 35px;
+.youtube-title {
+    font-size: 28px;
+    /* Tamanho de fonte ajustado */
+    text-align: center;
 }
 
-
-.youtubeDownloadUrl{
-    width: 60%;
-    height: 80px;
+.youtubeDownloadUrl {
+    width: 100%;
+    /* Largura total */
+    height: 50px;
     border: 3px solid rgb(0, 3, 0);
-}
-.youtubeDownloadUrl:placeholder{
-    text-align: center; 
-}
-
-.youtubeDownloadButton{
-    height: 60px;
-    width: 400px;
-    font-size: 20px;
+    padding: 8px;
+    /* Padding ajustado */
+    margin-bottom: 10px;
 }
 
+.youtubeDownloadUrl:placeholder {
+    text-align: center;
+}
 
-.audioContainer{
+.youtubeDownloadButton {
+    height: 40px;
+    width: auto;
+    /* Largura ajustável */
+    font-size: 16px;
+    /* Tamanho de fonte ajustado */
+    padding: 8px 16px;
+    /* Padding ajustado */
+}
+
+/* Estilos para o contêiner de áudio */
+.audioContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Quebra de linha */
 }
 
-
+/* Estilos para a seção de áudio */
 .audio-section {
     margin-bottom: 20px;
 }
 
 .audio-section h2 {
     color: #2E8B57;
+    text-align: center;
 }
 
-
+/* Estilos para o contêiner de entrada do YouTube */
 .youtube-input-container {
     display: flex;
     flex-direction: column;
@@ -502,13 +564,11 @@ align-items: center;
     margin-top: 100px;
 }
 
-.youtube-title {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
 .youtube-input {
-    width: 40%;
+    width: 90%;
+    /* Largura ajustada */
+    max-width: 500px;
+    /* Largura máxima definida */
     padding: 10px;
     margin-bottom: 10px;
     border: 2px solid black;
@@ -521,10 +581,12 @@ align-items: center;
     color: #fff;
     border: 2px solid black;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
+    /* Tamanho de fonte ajustado */
     text-align: center;
 }
 
+/* Estilos para o contêiner de vídeo */
 .video-container {
     width: 100%;
     margin-top: 80px;
@@ -535,10 +597,15 @@ align-items: center;
 }
 
 .video-container iframe {
-    width: 512px;
-    height: 290px;
+    width: 100%;
+    /* Largura máxima */
+    max-width: 800px;
+    /* Largura máxima definida */
+    height: 450px;
+    /* Altura ajustada */
 }
 
+/* Estilos para o modal de letras */
 .lyrics-modal {
     display: none;
     position: fixed;
@@ -550,6 +617,8 @@ align-items: center;
     border: 2px solid #2E8B57;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    max-width: 80%;
+    /* Largura máxima definida */
 }
 
 .modal-overlay {
@@ -572,44 +641,54 @@ align-items: center;
     border: none;
     cursor: pointer;
     text-align: center;
-    width: 80%;
+    width: auto;
+    /* Largura ajustável */
 }
 
-
-.gallery{
-    height: 100px;
-    width: 100%;
+/* Estilos para a galeria */
+.gallery {
     display: flex;
-    margin-bottom: 300px;
+    flex-wrap: wrap;
+    /* Quebra de linha */
+    justify-content: center;
+    margin-bottom: 100px;
+    /* Margem inferior ajustada */
 }
 
 .gallery img {
-    margin: 25px;
-    width: auto;
-    height: 300px;
-}
-
-.gallery video{
-    align-items: center;
-    justify-content: center;
+    margin: 10px;
+    /* Margem ajustada */
+    width: 100%;
+    /* Largura máxima */
+    max-width: 300px;
+    /* Largura máxima definida */
     height: auto;
-    max-width: 100%;
-            width: auto;
-            height: 300px;
 }
 
+.gallery video {
+    margin: 10px;
+    /* Margem ajustada */
+    width: 100%;
+    /* Largura máxima */
+    max-width: 300px;
+    /* Largura máxima definida */
+    height: auto;
+}
 
+/* Estilos para a galeria de destaques */
 .destaquesGallery {
     display: flex;
     flex-wrap: wrap;
+    /* Quebra de linha */
     gap: 10px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .destaquesGallery figure {
     margin: 0;
     text-align: center;
-    flex: 1 1 calc(100% / 11 - 10px);
+    flex: 1 1 calc(33.333% - 10px);
+    /* Ajuste para 3 colunas */
 }
 
 .destaquesGallery img {
@@ -623,57 +702,51 @@ align-items: center;
     font-weight: bold;
 }
 
-.forum{
-    margin-bottom: 500px;
-    overflow: hidden
+/* Estilos para o fórum */
+.forum {
+    margin-bottom: 100px;
+    /* Margem inferior ajustada */
+    overflow: hidden;
 }
 
-
-
-
-
-
-
-
-
-
+/* Estilos para a seção de contato */
 .contato {
-    margin-bottom: 300px;
+    margin-bottom: 100px;
+    /* Margem inferior ajustada */
 }
 
 .contato-form {
-  width: 100%;
+    width: 100%;
 }
 
-.contato-form input {
-    width: 60%;
-    height: 50px;
-    padding: 10px 0 10px 0;
-    margin-bottom: 10px;
-    border: 2px solid black;
-}
-.contato-form label{
-    text-align: left;
-    align-items: left;
-}
-
-
-.contato-form textarea{
-    width: 60%;
+.contato-form input,
+.contato-form textarea {
+    width: 90%;
+    /* Largura ajustada */
+    max-width: 500px;
+    /* Largura máxima definida */
+    padding: 10px;
     margin-bottom: 10px;
     border: 2px solid black;
     background-color: transparent;
     color: white;
-    font-size: 17px;
-    height: 80px;
-    resize: none;
+    font-size: 16px;
+    /* Tamanho de fonte ajustado */
 }
 
-textarea::placeholder {
-    color: white;
+.contato-form label {
+    text-align: left;
+    align-items: left;
 }
 
-.contato-form form{
+.contato-form textarea {
+    height: 120px;
+    /* Altura ajustada */
+    resize: vertical;
+    /* Redimensionamento vertical apenas */
+}
+
+.contato-form form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -686,19 +759,181 @@ textarea::placeholder {
     color: #fff;
     border: none;
     cursor: pointer;
+    width: auto;
+    /* Largura ajustável */
 }
 
-
-.rodape{
-    margin-top: 200px;
+/* Estilos para o rodapé da página */
+.rodape {
+    margin-top: 100px;
+    /* Margem superior ajustada */
     background-color: black;
     width: 100%;
-    height: 150px;
+    height: 100px;
+    /* Altura ajustada */
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
 }
 
-.rodape-text{
+.rodape-text {
     color: white;
 }
 
+
+/* Estilo básico para os botões */
+.nav-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    gap: 10px;
+}
+
+.nav-button {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+
+/* Estilos responsivos para telas menores */
+@media (max-width: 768px) {
+
+    .title{
+        padding-top: 120px;
+    }
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        /* Ajustado para ficar abaixo do cabeçalho */
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-button {
+        flex: 1 1 calc(50% - 20px);
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav.show {
+        display: block;
+    }
+
+    .nav-button {
+        display: block;
+    }
+
+
+    .destaquesGallery figure {
+        flex: 1 1 calc(50% - 10px);
+        /* Ajuste para 2 colunas */
+    }
+
+    iframe {
+        height: 200px;
+        /* Altura do iframe ajustada */
+    }
+
+    .youtubeDownloadUrl {
+        height: 60px;
+        /* Altura do input ajustada */
+    }
+
+    .commentText {
+        height: 60px;
+        /* Altura do textarea ajustada */
+    }
+
+    /* Outros ajustes para melhor visualização em telas menores */
+    section h2 {
+        font-size: 20px;
+    }
+
+    .recursosEducativos {
+        font-size: 24px;
+    }
+
+    .sonsTG {
+        font-size: 24px;
+    }
+
+    .commentsH2 {
+        font-size: 24px;
+    }
+
+    .menu-container {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* Cor de fundo do menu */
+        transition: top 0.3s ease;
+        z-index: 1000;
+        /* Garante que o menu fique sobre outros elementos */
+    }
+
+    .menu-hidden {
+        top: -380px;
+        /* Move o menu para fora da tela quando escondido */
+    }
+
+    header {
+        flex-direction: column;
+        position: sticky;
+        /* Altera a direção para coluna */
+    }
+
+    header .logo {
+        order: 1;
+        /* Define a ordem da logo */
+    }
+
+    header nav {
+        order: 2;
+        /* Define a ordem da navegação */
+        width: 100%;
+        /* Ocupa a largura total */
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        /* Centraliza os itens do menu */
+        width: 100%;
+        /* Ocupa a largura total */
+    }
+
+    nav ul li {
+        margin: 5px;
+        /* Reduz a margem entre os itens do menu */
+    }
+
+    .toggle-button {
+        margin: 10px auto;
+        /* Centraliza o botão verticalmente e horizontalmente */
+        display: block;
+        /* Garante que o botão ocupe toda a largura */
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-button {
+        flex: 1 1 calc(100% - 20px);
+        text-align: center;
+    }
+}
+
+    

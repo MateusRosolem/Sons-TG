@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
+window.onscroll = function() {
+  var menu = document.getElementById("top-menu");
+  if (window.pageYOffset > 0) {
+    menu.classList.add("menu-hidden");
+  } else {
+    menu.classList.remove("menu-hidden");
+  }
+};
 
 function adicionarComentario() {
     const comentarioInput = document.getElementById('comentarioInput');
