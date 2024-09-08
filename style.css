@@ -296,6 +296,7 @@ hr {
 
 /* Estilos para títulos */
 .title {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;

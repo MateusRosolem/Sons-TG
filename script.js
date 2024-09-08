@@ -25,6 +25,7 @@ window.onscroll = function() {
   }
 };
 
+
 function adicionarComentario() {
     const comentarioInput = document.getElementById('comentarioInput');
     const comentario = comentarioInput.value.trim();
