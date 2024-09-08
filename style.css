@@ -36,6 +36,36 @@ header {
     z-index: 10;
 }
 
+.menu-container{
+    display: flex;
+        justify-content: center;
+        /* Alinha os links <a> ao centro */
+        align-items: center;
+        width: 100%;
+        /* O menu ocupa toda a largura */
+}
+
+.menu-container ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.menu-container li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Alinhando o botão à esquerda */
+.menu-container li:first-child {
+    margin-right: auto;
+    /* Empurra o botão para a esquerda */
+}
+
 header .logo img {
     height: 40px;
     /* Ajuste conforme necessário */
@@ -131,11 +161,17 @@ h1,
     text-align: center;
 }
 
+
+
+.li-button-toggle{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
 .toggle-button {
-    position: relative;
     padding: 10px 20px;
-    width: 100px;
-    height: 45px;
+    margin: 10px 15px 0 0;
     background-color: black;
     border: 2px solid gray;
     cursor: pointer;
@@ -143,9 +179,8 @@ h1,
     font-size: 16px;
     border: solid;
     text-align: center;
-    margin-top: 10px;
-    margin-right: 10px;
-    /* Espaçamento à direita ajustado */
+    width: 100px;
+    height: 45px;
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
 }
@@ -216,6 +251,8 @@ hr {
     background-color: black;
     margin: 20px auto;
 }
+
+
 
 /* Estilos para termos e definições */
 .term {
@@ -780,6 +817,16 @@ hr {
     color: white;
 }
 
+.header-title {
+    font-weight: bold;
+}
+
+.li-header{
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    /* Centraliza os itens do menu */
+}
 
 /* Estilo básico para os botões */
 .nav-buttons-container {
@@ -872,15 +919,17 @@ hr {
         font-size: 24px;
     }
 
+
+
     .menu-container {
         width: 100%;
         position: fixed;
-        top: 0;
-        left: 0;
-        /* Cor de fundo do menu */
         transition: top 0.3s ease;
-        z-index: 1000;
-        /* Garante que o menu fique sobre outros elementos */
+        z-index: 1000; /* Garante que o menu fique sobre outros elementos */
+        display: flex;
+        justify-content: space-between;/* Alinha os botões com espaço entre eles */
+        align-items: center;/* Centraliza os itens verticalmente */
+        padding: 10px 20px;/* Espaçamento interno para melhor aparência */
     }
 
     .menu-hidden {
